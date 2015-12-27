@@ -25,11 +25,14 @@
     })
 
     // 加载入口模块
-    seajs.use("../static/hello/hello",function(hello){
-        console.log(hello)
+    seajs.use(["jQuery","../static/hello/hello"],function(hello){
+        $(document).ready(function() {
+            alert("document ready");
+            hello.m5();
+        });
            hello.title();
-//           hello.title2();
-    });Uncaught TypeError: hello.title2 is not a function
+//           hello.title2(); Uncaught TypeError: hello.title2 is not a function
+    });
 
 
 </script>
